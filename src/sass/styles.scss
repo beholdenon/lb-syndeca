@@ -1,0 +1,106 @@
+@import "flexbox/variables/main.scss";
+@import "flexbox/mixins/main.scss";
+@import "flexbox/grid";
+@import "flexbox/visibility";
+@import "variables";
+@import "mixins";
+@import "reboot";
+@import "aos";
+@import "custom_fonts";
+@import "slick/slick";
+@import "slick/slick-theme";
+
+html, body {
+	overflow-x: hidden;
+	font-size: 16px;
+	@media #{$breakpoint-xs-only} {
+		font-size: 90%;
+	}
+	@media #{$breakpoint-sm-only} {
+		font-size: 90%;
+	}
+	@media #{$breakpoint-md-only} {
+		font-size: 90%;
+	}
+}
+p {
+	@include avenir("book");
+	font-size: 2em;
+	text-align: center;
+	line-height: 1.5em;
+}
+h1, h2, h3, h4 {
+	@include avenir("bold");
+}
+.lb-container {
+	.row {
+		max-width: 1440px;
+		margin: 0 auto;
+		&.fluid {
+			max-width: none;
+			> div {
+				padding-top: 0;
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		&.no-gutter {
+			padding: 0 1rem;
+			>div {
+				padding: 0;
+			}
+		}
+	}
+	img {
+		max-width: 100%;
+	}
+}
+.cmp-fullscreen {
+	width: 100%;
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+.cmp-slider, .cmp-product-slider {
+	&.slick-dotted {
+		margin-bottom: 0;
+	}
+	.slick-dots {
+		bottom: 10px;
+		li {
+			padding: 0 3px;
+			button {
+				background: #999;
+				border-radius: 100px;
+				width: 8px;
+				height: 8px;
+				&:before {
+					content: "";
+				}
+			}
+			&.slick-active {
+				button {
+					background: #000;
+				}
+			}
+		}
+	}
+}
+.cmp-product-slider {
+	.slick-slide {
+		margin: 0 1rem;
+	}
+	.slick-list {
+	    margin: 0 -1rem;
+	  }
+	.slick-dots {
+		bottom: -20px;
+	}
+	margin-bottom: 30px!important;
+
+}
+
+
+
+
